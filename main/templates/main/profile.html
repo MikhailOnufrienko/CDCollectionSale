@@ -1,0 +1,19 @@
+{% extends 'main/basic.html' %}
+
+{% block title %}Профиль{% endblock title %}
+
+{% block content %}
+
+<h2>Профиль покупателя {{ user.username }}</h2>
+<p>Здравствуйте, {{ user.first_name }} {{ user.last_name }}!</p>
+
+<p>Ваши данные:</p>
+<ul>
+    <li>Имя в магазине: {{ user.username }}</li>
+    <li>Имя: {{ user.first_name }}</li>
+    <li>Фамилия: {{ user.last_name }}</li>
+    <li>E-mail: {{ user.email }}</li>
+</ul>
+<p><a href="{% url 'main:cart' %}">Ваша корзина</a></p>
+
+{% endblock content %}

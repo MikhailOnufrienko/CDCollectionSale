@@ -1,0 +1,12 @@
+header {
+    background: url("header-bg.jpg") center / auto 100% round;
+}
+
+h1 {
+    color: rgb(247, 244, 241);
+}
+
+.root {
+    font-size: larger;
+}
+
