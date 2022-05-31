@@ -55,4 +55,7 @@ class BuyerUserAdmin(admin.ModelAdmin):
 
 
 admin.site.register(BuyerUser, BuyerUserAdmin)
+admin.site.register(Artist)
 admin.site.register(Item)
+admin.site.register(Label)
+admin.site.register(ItemType)

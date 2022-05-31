@@ -12,7 +12,7 @@ class BuyerUser(AbstractUser):
 
 class Artist(models.Model):
     name = models.CharField(max_length=64, verbose_name='Исполнитель')
-    country = models.CharField(max_length=32, verbose_name='Страна')
+    country = models.CharField(max_length=32, null=True, blank=True, verbose_name='Страна')
 
     class Meta:
         verbose_name = 'Исполнитель'
@@ -33,8 +33,11 @@ class ItemType(models.Model):
         DOUBLE_DVD = '2xDVD', '2xDVD'
         DVD_DIGIPAK = 'DVD Digipak', 'DVD Digipak'
         DOUBLE_DVD_DIGIPAK = '2xDVD Digipak', '2xDVD Digipak'
-
     format = models.CharField(max_length=16, choices=Types.choices, default=Types.CD, verbose_name='Формат')
+
+    class Meta:
+        verbose_name = 'Формат'
+        verbose_name_plural = 'Форматы'
 
     def __str__(self):
         return self.format
