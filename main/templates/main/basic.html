@@ -54,13 +54,13 @@
 
     <div class="row">
         <nav class="col-md-auto nav flex-column border">
-            <span class="nav-link root font-weight-bold">Артисты</span>
-            <ul>
+            <span class="nav-link root font-weight-bold">Исполнители</span>
+            <div class="list-group list-group-flush">
                 {% for artist in artist_list %}
-                <li class="nav-item"><a class="nav-link" href="{% url 'band' artist.id %}"
-                    target="_blank"> {{ artist.artist|upper }}</a></li>
+                <a href="{% url 'main:band' artist.pk %}" class="list-group-item list-group-item-action"
+                target="_blank">{{ artist|upper }}</a>
                 {% endfor %}
-            </ul>
+                </div>
         </nav>
         <section class="col border py-2">
             {% bootstrap_messages %}

@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, Http404
 from django.template.loader import get_template
-from django.template import TemplateDoesNotExist
+from django.template import TemplateDoesNotExist, RequestContext
 from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
@@ -13,7 +13,7 @@ from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.views.generic.base import TemplateView
 from django.core.signing import BadSignature
 
-from .models import BuyerUser
+from .models import BuyerUser, Artist
 from .forms import ChangeUserInfoForm, RegisterUserForm
 from .utilities import signer
 
@@ -58,7 +58,9 @@ def index(request):
     return render(request, 'main/index.html')
 
 
-
+def band_view(request, pk):
+    artist = Artist.objects.get(pk=pk)
+    return render(request, 'main/band.html', context={'artist': artist})
 
 
 class DeleteUserView(LoginRequiredMixin, DeleteView):

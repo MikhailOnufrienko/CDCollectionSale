@@ -4,4 +4,17 @@
 
 <h2>Последние 10 дисков</h2>
 
+<div>
+    {% for album in item_list %}
+    <div>
+        <a href="#" class="list-group-item list-group-item-action"
+        target="_blank"><img src="/static/main/covers/{{ album.pk }}.jpg/"
+        style="width: 300px;" alt="{{ album.artist }} — {{ album }}" title="{{ album.artist }} — {{ album }}"></a>
+    </div>
+    <div>
+        <h6>{{ album.artist }} — {{ album }} ({{ album.year }}, {{ album.label }})</h6>
+    </div>
+    {% endfor %}
+</div>
+
 {% endblock content %}
