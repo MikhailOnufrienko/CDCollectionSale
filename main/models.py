@@ -72,3 +72,9 @@ class Item(models.Model):
 
     def __str__(self):
         return self.album
+
+    def labels(self):
+        if self.licensed_by:
+            return '%s/%s' % (self.label, self.licensed_by)
+        else:
+            return self.label
