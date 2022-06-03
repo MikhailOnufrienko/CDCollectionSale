@@ -1,0 +1,15 @@
+{% extends 'main/basic.html' %}
+
+{% block content %}
+
+<div>
+    <div>
+        <img src="/static/main/covers/{{ album.pk }}.jpg"
+        style="width: 300px;" alt="{{ album.artist }} — {{ album }}" title="{{ album.artist }} — {{ album }}">
+    </div>
+    <div>
+        <h6>{{ album.artist }} — {{ album }} ({{ album.year }}, {{ album.labels }})</h6>
+    </div>
+</div>
+
+{% endblock content %}

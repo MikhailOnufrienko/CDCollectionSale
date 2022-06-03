@@ -7,8 +7,8 @@
 <div>
     {% for album in item_list %}
     <div>
-        <a href="#" class="list-group-item list-group-item-action"
-        target="_blank"><img src="/static/main/covers/{{ album.pk }}.jpg/"
+        <a href="{% url 'main:album' album.pk %}" class="list-group-item list-group-item-action"
+        target="_blank"><img src="/static/main/covers/{{ album.pk }}.jpg"
         style="width: 300px;" alt="{{ album.artist }} — {{ album }}" title="{{ album.artist }} — {{ album }}"></a>
     </div>
     <div>

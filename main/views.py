@@ -13,7 +13,7 @@ from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.views.generic.base import TemplateView
 from django.core.signing import BadSignature
 
-from .models import BuyerUser, Artist
+from .models import BuyerUser, Artist, Item
 from .forms import ChangeUserInfoForm, RegisterUserForm
 from .utilities import signer
 
@@ -61,6 +61,11 @@ def index(request):
 def band_view(request, pk):
     artist = Artist.objects.get(pk=pk)
     return render(request, 'main/band.html', context={'artist': artist})
+
+
+def album_view(request, pk):
+    album = Item.objects.get(pk=pk)
+    return render(request, 'main/item.html', context={'album': album})
 
 
 class DeleteUserView(LoginRequiredMixin, DeleteView):
