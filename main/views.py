@@ -63,9 +63,9 @@ def band_view(request, pk):
     return render(request, 'main/band.html', context={'artist': artist})
 
 
-def album_view(request, pk):
-    album = Item.objects.get(pk=pk)
-    return render(request, 'main/item.html', context={'album': album})
+def item_view(request, pk):
+    item = Item.objects.get(pk=pk)
+    return render(request, 'main/item.html', context={'album': item})
 
 
 class DeleteUserView(LoginRequiredMixin, DeleteView):

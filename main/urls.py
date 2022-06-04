@@ -1,12 +1,12 @@
 from django.urls import path
 
 from .views import index, other_pages, profile, cart, CDLoginView, CDLogoutView, ChangeUserInfoView,\
-    ChangePasswordView, RegisterUserView, RegisterDoneView, user_activate, DeleteUserView, band_view, album_view
+    ChangePasswordView, RegisterUserView, RegisterDoneView, user_activate, DeleteUserView, band_view, item_view
 
 app_name = 'main'
 urlpatterns = [
     path('band/<int:pk>/', band_view, name='band'),
-    path('album/<int:pk>/', album_view, name='album'),
+    path('item/<int:pk>/', item_view, name='item'),
     path('accounts/register/', RegisterUserView.as_view(), name='register'),
     path('accounts/register/done/', RegisterDoneView.as_view(), name='register_done'),
     path('accounts/register/activate/<str:sign>/', user_activate, name='register_activate'),

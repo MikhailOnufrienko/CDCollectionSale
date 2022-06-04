@@ -1,16 +1,16 @@
 {% extends 'main/basic.html' %}
 
-{% block title %}{{ album }}{% endblock title %}
+{% block title %}{{ artist }}{% endblock title %}
 
 {% block content %}
 
 <div>
     <div>
-        <img src="/static/main/covers/{{ album.pk }}.jpg"
+        <img src="/static/main/bands/{{ artist|slugify }}.jpg"
         style="width: 300px;" alt="{{ album.artist }} — {{ album }}" title="{{ album.artist }} — {{ album }}">
     </div>
     <div>
-        <h6>{{ album.artist }} — {{ album }} ({{ album.year }}, {{ album.labels }})</h6>
+        {{ artist }}
     </div>
 </div>
 
