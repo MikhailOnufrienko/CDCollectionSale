@@ -57,7 +57,7 @@
             <span class="nav-link root font-weight-bold">Исполнители</span>
             <div class="list-group list-group-flush">
                 {% for artist in artist_list %}
-                <a href="{% url 'main:band' artist.pk %}"
+                <a href="{% url 'main:band' artist.slug %}"
                 class="list-group-item list-group-item-action">{{ artist|upper }}</a>
                 {% endfor %}
                 </div>

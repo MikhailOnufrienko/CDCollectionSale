@@ -13,7 +13,7 @@ class BuyerUser(AbstractUser):
 class Artist(models.Model):
     name = models.CharField(max_length=64, verbose_name='Исполнитель')
     country = models.CharField(max_length=32, null=True, blank=True, verbose_name='Страна')
-    slug = models.SlugField(max_length=64, allow_unicode=True, verbose_name='Идентификатор')
+    slug = models.SlugField(max_length=64, null=True, blank=True, db_index=True, allow_unicode=True, verbose_name='URL')
 
     class Meta:
         verbose_name = 'Исполнитель'
@@ -46,6 +46,7 @@ class ItemType(models.Model):
 
 class Label(models.Model):
     name = models.CharField(max_length=50, verbose_name='Название')
+    slug = models.SlugField(max_length=50,  null=True, blank=True, db_index=True, allow_unicode=True, verbose_name='URL')
 
     class Meta:
         verbose_name = 'Лейбл'
@@ -59,6 +60,7 @@ class Item(models.Model):
     item_type = models.ForeignKey(ItemType, on_delete=models.PROTECT)
     artist = models.ForeignKey(Artist, on_delete=models.PROTECT)
     album = models.CharField(max_length=128, verbose_name='Альбом')
+    slug = models.SlugField(max_length=128,  null=True, blank=True, db_index=True, allow_unicode=True, verbose_name='URL')
     label = models.ForeignKey(Label, related_name='items', on_delete=models.PROTECT)
     licensed_by = models.ForeignKey(Label, null=True, blank=True, on_delete=models.PROTECT)
     year = models.CharField(max_length=4)

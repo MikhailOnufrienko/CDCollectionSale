@@ -58,8 +58,16 @@ class ArtistAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
 
 
+class ItemAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('album',)}
+
+
+class LabelAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('name',)}
+
+
 admin.site.register(BuyerUser, BuyerUserAdmin)
 admin.site.register(Artist, ArtistAdmin)
-admin.site.register(Item)
-admin.site.register(Label)
+admin.site.register(Item, ItemAdmin)
+admin.site.register(Label, LabelAdmin)
 admin.site.register(ItemType)

@@ -58,8 +58,8 @@ def index(request):
     return render(request, 'main/index.html')
 
 
-def band_view(request, pk):
-    artist = Artist.objects.get(pk=pk)
+def band_view(request, band_slug):
+    artist = Artist.objects.get(slug=band_slug)
     return render(request, 'main/band.html', context={'artist': artist})
 
 

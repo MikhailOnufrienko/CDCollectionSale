@@ -5,7 +5,7 @@ from .views import index, other_pages, profile, cart, CDLoginView, CDLogoutView,
 
 app_name = 'main'
 urlpatterns = [
-    path('band/<int:pk>/', band_view, name='band'),
+    path('band/<slug:band_slug>/', band_view, name='band'),
     path('item/<int:pk>/', item_view, name='item'),
     path('accounts/register/', RegisterUserView.as_view(), name='register'),
     path('accounts/register/done/', RegisterDoneView.as_view(), name='register_done'),
