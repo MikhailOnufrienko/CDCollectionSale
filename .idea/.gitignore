@@ -1,3 +1,25 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+cdcollsale/__pycache__/
+cdcollsale/secret.py
+m1000x1000.jpg
+m1000x1000_1.jpg
+m1000x1000_10.jpg
+m1000x1000_17.jpg
+m1000x1000_19.jpg
+m1000x1000_2.jpg
+m1000x1000_22.jpg
+m1000x1000_24.jpg
+m1000x1000_3.jpg
+m1000x1000_4.jpg
+m1000x1000_5.jpg
+main/__pycache__/
+main/migrations/0003_alter_item_options_alter_item_license_year_and_more.py
+main/migrations/0004_alter_itemtype_options_alter_artist_country.py
+main/migrations/0005_alter_item_options_artist_slug.py
+main/migrations/0006_alter_artist_slug.py
+main/migrations/0007_alter_artist_slug.py
+main/migrations/__pycache__/
+main/static/main/bands/
+main/static/main/covers/

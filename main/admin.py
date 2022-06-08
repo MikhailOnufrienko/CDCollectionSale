@@ -54,8 +54,12 @@ class BuyerUserAdmin(admin.ModelAdmin):
     actions = (send_activation_notifications,)
 
 
+class ArtistAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('name',)}
+
+
 admin.site.register(BuyerUser, BuyerUserAdmin)
-admin.site.register(Artist)
+admin.site.register(Artist, ArtistAdmin)
 admin.site.register(Item)
 admin.site.register(Label)
 admin.site.register(ItemType)

@@ -13,6 +13,7 @@ class BuyerUser(AbstractUser):
 class Artist(models.Model):
     name = models.CharField(max_length=64, verbose_name='Исполнитель')
     country = models.CharField(max_length=32, null=True, blank=True, verbose_name='Страна')
+    slug = models.SlugField(max_length=64, allow_unicode=True, verbose_name='Идентификатор')
 
     class Meta:
         verbose_name = 'Исполнитель'
